@@ -1,6 +1,22 @@
+[http]
+	postBuffer = 524288000
+[mergetool]
+	keepBackup = false
+[push]
+	default = simple
+[core]
+	whitespace = trailing-space,space-before-tab
+[diff]
+	mnemonicprefix = true
+[merge]
+	stat = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[feature]
+	manyFiles = 1
 [user]
-	name = Violet Guo
-	email = violetguos@users.noreply.github.com
+	name = violetyguo
+	email = violet.guo@instacart.com
 [alias]
 	cm = commit
 	p = push -u origin HEAD
@@ -10,20 +26,3 @@
 	last = log -1 HEAD
 	br = branch
 	glog = log --graph --pretty=oneline --abbrev-commit
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-[core]
-	excludesfile = /Users/vikuo/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Users/vikuo/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/vikuo/.stCommitMsg
-[color]
-	ui = auto
